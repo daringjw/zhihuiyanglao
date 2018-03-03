@@ -71,7 +71,9 @@ public class ReturnRecordDetailActivity extends AppCompatActivity {
             Collections.reverse(mReturnDatas);
 
             String imgPath = mReturnDatas.get(detail_position).getImgPath();
-            Log.d(TAG, imgPath);
+
+//            Log.d(TAG, imgPath);
+
             String[] split = imgPath.split(",");
             mImgList = new ArrayList<>();
 
