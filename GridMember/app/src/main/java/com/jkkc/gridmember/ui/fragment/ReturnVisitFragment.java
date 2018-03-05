@@ -67,6 +67,8 @@ public class ReturnVisitFragment extends Fragment implements DatePickerDialog.On
     private static final String TAG = "ReturnVisitFragment";
     //回访数据列表
     private List<ReturnVisitListData> mDatas;
+    //可以回访数据列表
+    private List<ReturnVisitListData> mDatas1;
 
 
     @Nullable
@@ -133,13 +135,25 @@ public class ReturnVisitFragment extends Fragment implements DatePickerDialog.On
                         }.getType());
 
 //                        String canVisit = mDatas.get(0).canVisit;
+                        mDatas1 = new ArrayList<>();
+                        for (int i = 0; i < mDatas.size(); i++) {
+                            String canVisit = mDatas.get(i).canVisit;
+                            if (canVisit.equals("1")) {
+                                //可以访问
+                                mDatas1.add(mDatas.get(i));
 
-                        if (mDatas != null) {
+                            } else {
+                                //不可以访问
+
+                            }
+                        }
+
+                        if (mDatas1 != null) {
 
 //                            int size = mDatas.size();
 //                            PrefUtils.setString(getActivity(), "size", size + "");
 
-                            mAdapter = new MyAdapter(mDatas);
+                            mAdapter = new MyAdapter(mDatas1);
                             mRecyclerView.setAdapter(mAdapter);
 
                             mAdapter.setOnItemClickListener(new OnRecyclerViewItemClickListener() {
