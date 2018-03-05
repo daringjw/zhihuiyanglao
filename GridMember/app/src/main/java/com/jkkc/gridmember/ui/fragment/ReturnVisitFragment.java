@@ -136,15 +136,18 @@ public class ReturnVisitFragment extends Fragment implements DatePickerDialog.On
 
 //                        String canVisit = mDatas.get(0).canVisit;
                         mDatas1 = new ArrayList<>();
-                        for (int i = 0; i < mDatas.size(); i++) {
-                            String canVisit = mDatas.get(i).canVisit;
-                            if (canVisit.equals("1")) {
-                                //可以访问
-                                mDatas1.add(mDatas.get(i));
 
-                            } else {
-                                //不可以访问
+                        if (mDatas!=null){
+                            for (int i = 0; i < mDatas.size(); i++) {
+                                String canVisit = mDatas.get(i).canVisit;
+                                if (canVisit.equals("1")) {
+                                    //可以访问
+                                    mDatas1.add(mDatas.get(i));
 
+                                } else {
+                                    //不可以访问
+
+                                }
                             }
                         }
 
