@@ -71,9 +71,9 @@ public class TimingActivity extends AppCompatActivity {
                 } else {
                     second--;
                     if (second >= 10) {
-                        timeView.setText("0" + minute + ":" + second);
+                        timeView.setText("0" + minute + "分:" + second+"秒");
                     } else {
-                        timeView.setText("0" + minute + ":0" + second);
+                        timeView.setText("0" + minute + "分:0" + second+"秒");
                     }
                 }
             } else {
@@ -81,23 +81,23 @@ public class TimingActivity extends AppCompatActivity {
                     second = 59;
                     minute--;
                     if (minute >= 10) {
-                        timeView.setText(minute + ":" + second);
+                        timeView.setText(minute + "分:" + second+"秒");
                     } else {
-                        timeView.setText("0" + minute + ":" + second);
+                        timeView.setText("0" + minute + "分:" + second+"秒");
                     }
                 } else {
                     second--;
                     if (second >= 10) {
                         if (minute >= 10) {
-                            timeView.setText(minute + ":" + second);
+                            timeView.setText(minute + "分:" + second+"秒");
                         } else {
-                            timeView.setText("0" + minute + ":" + second);
+                            timeView.setText("0" + minute +"分"+ ":" + second +"秒");
                         }
                     } else {
                         if (minute >= 10) {
-                            timeView.setText(minute + ":0" + second);
+                            timeView.setText(minute + "分:0" + second+"秒");
                         } else {
-                            timeView.setText("0" + minute + ":0" + second);
+                            timeView.setText("0" + minute + "分:0" + second+"秒");
                         }
                     }
                 }
@@ -161,7 +161,7 @@ public class TimingActivity extends AppCompatActivity {
         mIvCallOldMan = (ImageView) findViewById(R.id.ivCallOldMan);
 
 
-        timeView.setText("00:" + minute + ":" + second);
+        timeView.setText("00:" + minute + "分:" + second +"秒");
 
         timerTask = new TimerTask() {
 
